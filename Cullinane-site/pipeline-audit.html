@@ -27,8 +27,6 @@
   --shadow-lg:0 13px 40px rgba(0,0,0,0.09),0 4px 14px rgba(0,0,0,0.06);
 }
 body{font-family:'Geist','Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased;min-height:100vh;}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,249,252,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-inner{max-width:1140px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{height:36px;width:auto;}
@@ -36,14 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,249,252,
 .nav-back:hover{color:var(--text-primary);}
 .nav-cta{padding:8px 20px;background:var(--blue);color:#fff;border-radius:var(--radius);font-size:14px;font-weight:600;text-decoration:none;transition:background .15s;box-shadow:0 4px 12px rgba(99,91,255,0.3);}
 .nav-cta:hover{background:var(--blue-hover);}
-
-/* HERO STRIP */
-.hero-strip{
-  padding:100px 40px 48px;
-  background:linear-gradient(180deg,#f6f9fc 0%,#fff 100%);
-  border-bottom:1px solid var(--border);
-  position:relative;overflow:hidden;
-}
+.hero-strip{padding:100px 40px 48px;background:linear-gradient(180deg,#f6f9fc 0%,#fff 100%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
 .hero-strip::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:500px;background:radial-gradient(ellipse,rgba(99,91,255,0.07) 0%,transparent 65%);pointer-events:none;}
 .hero-strip-inner{max-width:1140px;margin:0 auto;position:relative;z-index:1;}
 .strip-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text-secondary);margin-bottom:24px;box-shadow:var(--shadow-sm);}
@@ -51,11 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,249,252,
 .hero-strip h1{font-size:clamp(36px,4.5vw,58px);font-weight:700;letter-spacing:-.025em;line-height:1.08;color:var(--text-primary);margin-bottom:16px;max-width:700px;}
 .hero-strip h1 em{font-style:normal;background:linear-gradient(135deg,#635bff 0%,#00b4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-strip p{font-size:17px;line-height:1.7;color:var(--text-secondary);max-width:540px;}
-
-/* MAIN LAYOUT */
 .main{max-width:1140px;margin:0 auto;padding:56px 40px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;}
-
-/* LEFT: form card */
 .form-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:40px;box-shadow:var(--shadow-lg);position:sticky;top:88px;}
 .form-card-title{font-size:18px;font-weight:700;letter-spacing:-.015em;color:var(--text-primary);margin-bottom:4px;}
 .form-card-sub{font-size:14px;color:var(--text-muted);margin-bottom:28px;}
@@ -71,21 +58,11 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .submit-btn:hover{background:var(--blue-hover);transform:translateY(-1px);}
 .submit-btn:disabled{opacity:.7;pointer-events:none;transform:none;}
 .submit-note{text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px;}
-
-/* RIGHT: results */
 .results-col{}
-.results-empty{
-  background:var(--white);
-  border:1px dashed var(--border-strong);
-  border-radius:var(--radius-xl);
-  padding:56px 40px;
-  text-align:center;
-}
+.results-empty{background:var(--white);border:1px dashed var(--border-strong);border-radius:var(--radius-xl);padding:56px 40px;text-align:center;}
 .results-empty-icon{width:56px;height:56px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
 .results-empty h3{font-size:17px;font-weight:600;color:var(--text-primary);margin-bottom:8px;}
 .results-empty p{font-size:14px;line-height:1.65;color:var(--text-muted);max-width:280px;margin:0 auto;}
-
-/* Loading */
 .loading-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:48px 40px;text-align:center;display:none;}
 .spinner{width:36px;height:36px;border:3px solid var(--blue-light);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px;}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -98,8 +75,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .loading-step.active .loading-step-dot{background:var(--blue);}
 .loading-step.done .loading-step-dot{background:#12b76a;}
 .loading-step.done{color:#12b76a;}
-
-/* Results card */
 .results-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;display:none;box-shadow:var(--shadow-lg);}
 .results-header{background:linear-gradient(135deg,#0a2540 0%,#1a3a5c 100%);padding:28px 36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .results-header h2{font-size:18px;font-weight:700;color:#fff;letter-spacing:-.01em;}
@@ -112,20 +87,14 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .result-section-label-icon{width:24px;height:24px;background:var(--blue-light);border-radius:6px;display:flex;align-items:center;justify-content:center;}
 .result-content{font-size:14px;line-height:1.75;color:var(--text-secondary);}
 .result-content strong{color:var(--text-primary);font-weight:600;}
-
-/* Streaming text effect */
 .streaming::after{content:'▋';animation:blink .7s infinite;color:var(--blue);font-size:12px;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-
 .results-footer{padding:24px 36px;background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .results-footer p{font-size:13px;color:var(--text-muted);}
 .btn-book{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;background:var(--blue);color:#fff;border-radius:var(--radius);font-size:14px;font-weight:600;text-decoration:none;transition:all .15s;box-shadow:0 4px 12px rgba(99,91,255,0.25);}
 .btn-book:hover{background:var(--blue-hover);transform:translateY(-1px);}
-
-/* Error */
 .error-card{background:#fff5f5;border:1px solid #fed7d7;border-radius:var(--radius-lg);padding:20px 24px;display:none;margin-top:12px;}
 .error-card p{font-size:14px;color:#c53030;}
-
 @media(max-width:860px){
   .main{grid-template-columns:1fr;padding:40px 24px 60px;}
   .form-card{position:static;}
@@ -149,7 +118,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero-strip">
   <div class="hero-strip-inner">
     <div class="strip-badge">
@@ -161,15 +129,11 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="main">
-
-  <!-- LEFT: Form -->
   <div>
     <div class="form-card">
       <div class="form-card-title">About your business</div>
       <div class="form-card-sub">Takes about 60 seconds to fill in.</div>
-
       <form id="audit-form" novalidate>
         <div class="fg">
           <label>Company name <span class="req">*</span></label>
@@ -188,9 +152,9 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
           <select id="mrr">
             <option value="" disabled selected>Select a range…</option>
             <option value="Pre-revenue">Pre-revenue</option>
-            <option value="€0–€2k MRR">€0 – €2,000 / month</option>
-            <option value="€2k–€10k MRR">€2,000 – €10,000 / month</option>
-            <option value="€10k–€30k MRR">€10,000 – €30,000 / month</option>
+            <option value="€0-€2k MRR">€0 – €2,000 / month</option>
+            <option value="€2k-€10k MRR">€2,000 – €10,000 / month</option>
+            <option value="€10k-€30k MRR">€10,000 – €30,000 / month</option>
             <option value="€30k+ MRR">€30,000+ / month</option>
           </select>
         </div>
@@ -202,24 +166,19 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
           <label>Biggest pipeline challenge right now?</label>
           <textarea id="challenge" placeholder="e.g. not enough time to do outbound, don't know who to target…" style="min-height:72px;"></textarea>
         </div>
-
         <button type="submit" class="submit-btn" id="submit-btn">
           Generate my audit
           <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
         <p class="submit-note">Free. No email required. Results in under 30 seconds.</p>
       </form>
-
       <div class="error-card" id="error-card">
-        <p>Something went wrong generating your audit. Please try again or email <a href="/cdn-cgi/l/email-protection#167277646477717e5675637a7a7f787778737a7774653875797b" style="color:var(--blue);"><span class="__cf_email__" data-cfemail="60040112120107082003150c0c090e010e050c0102134e030f0d">[email&#160;protected]</span></a> directly.</p>
+        <p>Something went wrong generating your audit. Please try again or email <a href="mailto:darragh@cullinanelabs.com" style="color:var(--blue);">darragh@cullinanelabs.com</a> directly.</p>
       </div>
     </div>
   </div>
 
-  <!-- RIGHT: Results -->
   <div class="results-col">
-
-    <!-- Empty state -->
     <div class="results-empty" id="results-empty">
       <div class="results-empty-icon">
         <svg width="24" height="24" fill="none" stroke="#635bff" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2zm0 0V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v10m-6 0a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2m0 0V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2z"/></svg>
@@ -227,8 +186,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
       <h3>Your audit will appear here</h3>
       <p>Fill in the form and hit generate — your custom pipeline audit and ICP profile will show up instantly.</p>
     </div>
-
-    <!-- Loading state -->
     <div class="loading-card" id="loading-card">
       <div class="spinner"></div>
       <h3>Analysing your business…</h3>
@@ -240,8 +197,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
         <div class="loading-step" id="step4"><span class="loading-step-dot"></span>Generating recommendations</div>
       </div>
     </div>
-
-    <!-- Results card -->
     <div class="results-card" id="results-card">
       <div class="results-header">
         <div>
@@ -281,11 +236,10 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
         </a>
       </div>
     </div>
-
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function showStep(n){
   for(var i=1;i<=4;i++){
     var el=document.getElementById('step'+i);
@@ -295,16 +249,15 @@ function showStep(n){
   }
 }
 
-function typeText(el, text){
+function typeText(el,text){
   el.classList.add('streaming');
   el.innerHTML='';
   var i=0;
-  var speed=12;
   function tick(){
     if(i<text.length){
       el.innerHTML=text.substring(0,i+1).replace(/\n/g,'<br>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
       i++;
-      setTimeout(tick, speed);
+      setTimeout(tick,12);
     } else {
       el.classList.remove('streaming');
     }
@@ -312,29 +265,24 @@ function typeText(el, text){
   tick();
 }
 
-document.getElementById('audit-form').addEventListener('submit', function(e){
+document.getElementById('audit-form').addEventListener('submit',function(e){
   e.preventDefault();
+  var company=document.getElementById('company').value.trim();
+  var product=document.getElementById('product').value.trim();
+  var target=document.getElementById('target').value.trim();
+  var mrr=document.getElementById('mrr').value;
+  var current=document.getElementById('current').value.trim();
+  var challenge=document.getElementById('challenge').value.trim();
 
-  var company   = document.getElementById('company').value.trim();
-  var product   = document.getElementById('product').value.trim();
-  var target    = document.getElementById('target').value.trim();
-  var mrr       = document.getElementById('mrr').value;
-  var current   = document.getElementById('current').value.trim();
-  var challenge = document.getElementById('challenge').value.trim();
-
-  if(!company || !product || !target){
-    if(!company) document.getElementById('company').style.borderColor='#df1b41';
-    if(!product) document.getElementById('product').style.borderColor='#df1b41';
-    if(!target)  document.getElementById('target').style.borderColor='#df1b41';
+  if(!company||!product||!target){
+    if(!company)document.getElementById('company').style.borderColor='#df1b41';
+    if(!product)document.getElementById('product').style.borderColor='#df1b41';
+    if(!target)document.getElementById('target').style.borderColor='#df1b41';
     return;
   }
 
-  // Reset borders
-  ['company','product','target'].forEach(function(id){
-    document.getElementById(id).style.borderColor='';
-  });
+  ['company','product','target'].forEach(function(id){document.getElementById(id).style.borderColor='';});
 
-  // Show loading
   document.getElementById('results-empty').style.display='none';
   document.getElementById('results-card').style.display='none';
   document.getElementById('error-card').style.display='none';
@@ -346,11 +294,11 @@ document.getElementById('audit-form').addEventListener('submit', function(e){
   var stepTimer=1;
   var stepInterval=setInterval(function(){
     stepTimer++;
-    if(stepTimer<=4) showStep(stepTimer);
+    if(stepTimer<=4)showStep(stepTimer);
     else clearInterval(stepInterval);
   },1800);
 
-  var prompt = "You are a B2B SaaS outbound sales expert. A founder has submitted details about their business for a free pipeline audit. Analyse their situation and provide two things:\n\n1. A PIPELINE AUDIT — an honest, specific assessment of their current pipeline situation, what's likely going wrong, what the biggest gaps are, and 3 concrete things they should focus on to generate more pipeline. Be direct and specific, not generic.\n\n2. AN ICP PROFILE — a detailed Ideal Customer Profile for this business including: the exact job titles they should be targeting, company size and industry, key pain points their ICP experiences, what triggers should make them reach out to a prospect, and what a qualified meeting looks like for this business.\n\nHere are the business details:\n\nCompany: "+company+"\nProduct: "+product+"\nTarget customer: "+target+"\nCurrent MRR: "+(mrr||'Not provided')+"\nHow they currently get customers: "+(current||'Not provided')+"\nBiggest pipeline challenge: "+(challenge||'Not provided')+"\n\nFormat your response as two clearly separated sections. Use **bold** for important terms and headers within each section. Be specific to their business — do not give generic advice. Write in plain English, no bullet point lists, write in flowing paragraphs. Keep each section to around 200 words.";
+  var prompt="You are a B2B SaaS outbound sales expert. A founder has submitted details about their business for a free pipeline audit. Analyse their situation and provide two things:\n\n1. A PIPELINE AUDIT — an honest, specific assessment of their current pipeline situation, what's likely going wrong, what the biggest gaps are, and 3 concrete things they should focus on to generate more pipeline. Be direct and specific, not generic.\n\n2. AN ICP PROFILE — a detailed Ideal Customer Profile for this business including: the exact job titles they should be targeting, company size and industry, key pain points their ICP experiences, what triggers should make them reach out to a prospect, and what a qualified meeting looks like for this business.\n\nHere are the business details:\n\nCompany: "+company+"\nProduct: "+product+"\nTarget customer: "+target+"\nCurrent MRR: "+(mrr||'Not provided')+"\nHow they currently get customers: "+(current||'Not provided')+"\nBiggest pipeline challenge: "+(challenge||'Not provided')+"\n\nFormat your response as two clearly separated sections. Use **bold** for important terms. Be specific to their business. Write in plain English, flowing paragraphs, around 200 words each section.";
 
   fetch('/api/audit',{
     method:'POST',
@@ -361,52 +309,38 @@ document.getElementById('audit-form').addEventListener('submit', function(e){
   .then(function(data){
     clearInterval(stepInterval);
     document.getElementById('loading-card').style.display='none';
-
     if(!data.content||!data.content[0]){
       document.getElementById('error-card').style.display='block';
       document.getElementById('submit-btn').disabled=false;
       return;
     }
-
-    var full = data.content[0].text;
-
-    // Split into two sections
-    var auditText='', icpText='';
-    var lines = full.split('\n');
-    var inICP = false;
-    var auditLines=[], icpLines=[];
-
+    var full=data.content[0].text;
+    var lines=full.split('\n');
+    var inICP=false;
+    var auditLines=[],icpLines=[];
     for(var i=0;i<lines.length;i++){
       var line=lines[i];
-      if(line.match(/ICP|Ideal Customer/i) && (line.match(/^[#\*]|^[0-9]|^ICP/i) || line.length < 60)){
-        inICP=true;
-      }
-      if(!inICP){
-        auditLines.push(line);
-      } else {
-        icpLines.push(line);
-      }
+      if(line.match(/ICP|Ideal Customer/i)&&(line.match(/^[#*]|^[0-9]|^ICP/i)||line.length<60)){inICP=true;}
+      if(!inICP){auditLines.push(line);}else{icpLines.push(line);}
     }
-
-    auditText = auditLines.join('\n').replace(/^[\s\S]*?(Pipeline Audit|1\.|PIPELINE)/i,'').trim();
-    icpText   = icpLines.join('\n').replace(/^[\s\S]*?(ICP|Ideal Customer|2\.)/i,'').trim();
-
-    if(!auditText) auditText = full.substring(0, Math.floor(full.length/2));
-    if(!icpText)   icpText   = full.substring(Math.floor(full.length/2));
-
+    var auditText=auditLines.join('\n').replace(/^[\s\S]*?(Pipeline Audit|1\.|PIPELINE)/i,'').trim();
+    var icpText=icpLines.join('\n').replace(/^[\s\S]*?(ICP|Ideal Customer|2\.)/i,'').trim();
+    if(!auditText)auditText=full.substring(0,Math.floor(full.length/2));
+    if(!icpText)icpText=full.substring(Math.floor(full.length/2));
     document.getElementById('results-card').style.display='block';
-
     setTimeout(function(){
-      typeText(document.getElementById('audit-content'), auditText);
-      setTimeout(function(){
-        typeText(document.getElementById('icp-content'), icpText);
-      }, auditText.length * 12 + 400);
-    }, 200);
-
+      typeText(document.getElementById('audit-content'),auditText);
+      setTimeout(function(){typeText(document.getElementById('icp-content'),icpText);},auditText.length*12+400);
+    },200);
     document.getElementById('submit-btn').disabled=false;
   })
   .catch(function(){
     clearInterval(stepInterval);
     document.getElementById('loading-card').style.display='none';
     document.getElementById('error-card').style.display='block';
-    document.getElementById('s
+    document.getElementById('submit-btn').disabled=false;
+  });
+});
+</script>
+</body>
+</html>
