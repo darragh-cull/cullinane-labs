@@ -165,6 +165,30 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
   box-shadow:var(--shadow-sm);
 }
 .btn-ghost:hover{border-color:#b0bac7;color:var(--text-primary);}
+.btn-audit{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:13px 24px;
+  background:linear-gradient(135deg,#0a2540 0%,#1a3a5c 100%);
+  color:#fff;
+  border:none;
+  border-radius:var(--radius);
+  font-size:15px;font-weight:600;
+  text-decoration:none;
+  transition:all .2s;
+  box-shadow:0 5px 18px rgba(10,37,64,0.3);
+}
+.btn-audit:hover{box-shadow:0 8px 24px rgba(10,37,64,0.38);transform:translateY(-1px);}
+.btn-audit-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  background:rgba(99,91,255,0.3);
+  border:1px solid rgba(147,130,255,0.4);
+  color:#c4b5fd;
+  border-radius:100px;
+  padding:2px 8px;
+  font-size:11px;font-weight:700;
+  letter-spacing:.04em;
+}
+
 .hero-footnote{font-size:13px;color:var(--text-muted);margin-top:16px;}
 
 /* ── LOGO BAR ── */
@@ -374,7 +398,11 @@ footer{
         Book a free call
         <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="pipeline-audit.html" class="btn-ghost">Get a free pipeline audit →</a>
+      <a href="pipeline-audit.html" class="btn-audit">
+        <span class="btn-audit-badge">✦ Free AI</span>
+        Get your pipeline audit
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
     <p class="hero-footnote">No commitment. 30 minutes. We'll tell you honestly if it's a fit.</p>
   </div>
@@ -513,13 +541,11 @@ footer{
     <span class="footer-copy">© 2026 Cullinane Labs</span>
     <div class="footer-links">
       <a href="contact.html">Book a call</a>
-      <a href="/cdn-cgi/l/email-protection#234742515142444b6340564f4f4a4d424d464f4241500d404c4e"><span class="__cf_email__" data-cfemail="95f1f4e7e7f4f2fdd5f6e0f9f9fcfbf4fbf0f9f4f7e6bbf6faf8">[email&#160;protected]</span></a>
+      <a href="mailto:darragh@cullinanelabs.com">darragh@cullinanelabs.com</a>
       <a href="#">Privacy Policy</a>
     </div>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:0.06});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
