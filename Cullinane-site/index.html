@@ -76,9 +76,8 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .btn-primary:hover svg{transform:translateX(3px);}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:13px 24px;background:var(--white);color:var(--text-secondary);border:1px solid var(--border-strong);border-radius:var(--radius);font-size:15px;font-weight:500;text-decoration:none;transition:all .15s;box-shadow:var(--shadow-sm);}
 .btn-ghost:hover{border-color:#b0bac7;color:var(--text-primary);}
-.btn-audit{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;background:linear-gradient(135deg,#0a2540 0%,#1a3a5c 100%);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 5px 18px rgba(10,37,64,0.3);}
-.btn-audit:hover{box-shadow:0 8px 24px rgba(10,37,64,0.38);transform:translateY(-1px);}
-.btn-audit-badge{display:inline-flex;align-items:center;gap:4px;background:rgba(99,91,255,0.3);border:1px solid rgba(147,130,255,0.4);color:#c4b5fd;border-radius:100px;padding:2px 8px;font-size:11px;font-weight:700;letter-spacing:.04em;}
+.btn-audit{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--white);color:var(--text-primary);border:1.5px solid var(--border-strong);border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:var(--shadow-sm);}
+.btn-audit:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px);box-shadow:var(--shadow);}
 .hero-footnote{font-size:13px;color:var(--text-muted);margin-top:16px;}
 .logo-bar{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 40px;}
 .logo-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
@@ -130,6 +129,13 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .pilot-item-icon{width:34px;height:34px;flex-shrink:0;background:var(--blue-light);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;}
 .pilot-item h4{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:3px;}
 .pilot-item p{font-size:13px;line-height:1.55;color:var(--text-secondary);}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;transition:box-shadow .15s,border-color .15s;}
+.feature-card:hover{box-shadow:var(--shadow);border-color:var(--border-strong);}
+.feature-icon{width:40px;height:40px;background:var(--blue-light);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
+.feature-card h3{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:8px;letter-spacing:-.01em;}
+.feature-card p{font-size:14px;line-height:1.65;color:var(--text-secondary);}
+.footer-wordmark{font-size:15px;font-weight:700;color:var(--text-primary);letter-spacing:-.01em;text-decoration:none;}
 footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
 .footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-logo{height:32px;width:auto;}
@@ -175,6 +181,7 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   .section{padding:64px 24px;}
   .logo-bar{padding:20px 24px;}
   .logo-bar-inner{gap:16px;}
+  .feature-grid{grid-template-columns:repeat(2,1fr);}
   .process-grid,.who-cols,.pilot-grid{grid-template-columns:1fr;}
   .pilot-left{padding:36px 28px;}
   .pilot-right{padding:28px;}
@@ -205,34 +212,21 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   <div class="hero">
     <div class="hero-eyebrow">
       <span class="eyebrow-pill">New</span>
-      Now taking pilot applications for Q2 2026
+      Now taking pilot applications.
     </div>
-    <h1>The outbound engine for<br><em>early-stage SaaS founders</em></h1>
-    <p class="hero-sub">Stop losing pipeline to a full to-do list. Cullinane Labs handles your prospecting, outreach, and follow-ups — so qualified meetings land in your calendar while you focus on closing.</p>
+    <h1>Qualified meetings booked.<br><em>You just show up and close.</em></h1>
+    <p class="hero-sub">Cullinane Labs handles your prospecting, outreach, and follow-ups — so your calendar fills with the right conversations.</p>
     <div class="hero-ctas">
       <a href="contact.html" class="btn-primary">
         Book a free call
         <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="pipeline-audit.html" class="btn-audit">
-        <span class="btn-audit-badge">✦ Free AI</span>
-        Get your pipeline audit
+        Free pipeline audit
         <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
     <p class="hero-footnote">No commitment. 30 minutes. We'll tell you honestly if it's a fit.</p>
-  </div>
-</div>
-
-<div class="logo-bar">
-  <div class="logo-bar-inner">
-    <span class="logo-bar-label">Why founders choose us</span>
-    <div class="stat-pills">
-      <div class="stat-pill"><span class="pill-dot"></span><strong>30-day</strong> pilot — no lock-in</div>
-      <div class="stat-pill"><span class="pill-dot"></span>Pay <strong>per meeting</strong> booked</div>
-      <div class="stat-pill"><span class="pill-dot"></span><strong>B2B SaaS</strong> only</div>
-      <div class="stat-pill"><span class="pill-dot"></span>You approve <strong>every message</strong></div>
-    </div>
   </div>
 </div>
 
@@ -266,11 +260,46 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   </div>
 </div>
 
-<div class="section" id="who">
+<div class="section" id="why">
+  <div class="inner">
+    <div class="feature-grid r">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" fill="none" stroke="#635bff" stroke-width="2.2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>30-day pilot, no lock-in</h3>
+        <p>Start with a structured 30-day pilot. No long contracts or pressure to continue if it's not delivering.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" fill="none" stroke="#635bff" stroke-width="2.2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Pay per meeting booked</h3>
+        <p>Performance-based pricing. You only pay when a qualified meeting lands in your calendar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" fill="none" stroke="#635bff" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>B2B SaaS only</h3>
+        <p>We work exclusively with B2B SaaS founders — no generalist approach, no learning curve on your dime.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="18" height="18" fill="none" stroke="#635bff" stroke-width="2.2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>You approve every message</h3>
+        <p>Nothing goes out without your sign-off. Your brand, your voice — we handle the execution.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section section-alt" id="who">
   <div class="inner">
     <div class="section-label r">Who it's for</div>
-    <h2 class="section-title r">We're selective. That's the point.</h2>
-    <p class="section-sub r">Outbound only works when the conditions are right. We'd rather tell you it's not a fit than take your money and underdeliver.</p>
+    <h2 class="section-title r">Outbound only works in the right conditions.</h2>
+    <p class="section-sub r">Outbound works when the conditions are right — and not every business is there yet. Here's an honest breakdown of what those conditions look like.</p>
     <div class="who-cols">
       <div class="who-card who-yes r">
         <div class="who-header">
@@ -301,16 +330,15 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   </div>
 </div>
 
-<div class="section section-alt" id="pilot">
+<div class="section" id="pilot">
   <div class="inner">
     <div class="section-label r">Current offer</div>
     <h2 class="section-title r">The 30-day pilot.</h2>
     <div class="pilot-grid r">
       <div class="pilot-left">
         <div>
-          <div class="pilot-badge"><span class="pilot-badge-dot"></span>Taking applications now</div>
           <h2>Built for <em>early-stage</em> founders who need pipeline, not promises.</h2>
-          <p>We take on a small number of pilot clients at a time. You get hands-on outbound execution. We get a case study. A straightforward trade — no long-term commitment unless it's working.</p>
+          <p>We take on a small number of pilot clients at a time. No long-term commitment. If it's working, we continue. If not, you walk away.</p>
         </div>
         <a href="contact.html" class="btn-white">
           Apply for a spot
@@ -349,7 +377,7 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
 
 <footer>
   <div class="footer-inner">
-    <img src="image_1.png" alt="Cullinane Labs" class="footer-logo">
+    <a href="index.html" class="footer-wordmark">Cullinane Labs</a>
     <span class="footer-copy">© 2026 Cullinane Labs</span>
     <div class="footer-links">
       <a href="contact.html">Book a call</a>
