@@ -76,32 +76,23 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .btn-primary:hover svg{transform:translateX(3px);}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:13px 24px;background:var(--white);color:var(--text-secondary);border:1px solid var(--border-strong);border-radius:var(--radius);font-size:15px;font-weight:500;text-decoration:none;transition:all .15s;box-shadow:var(--shadow-sm);}
 .btn-ghost:hover{border-color:#b0bac7;color:var(--text-primary);}
-.btn-audit{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--white);color:var(--text-primary);border:1.5px solid var(--border-strong);border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:var(--shadow-sm);}
-.btn-audit:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px);box-shadow:var(--shadow);}
+.btn-audit{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:linear-gradient(135deg,#0a2540 0%,#1a3a5c 100%);color:#fff;border:none;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 5px 18px rgba(10,37,64,0.3);}
+.btn-audit:hover{box-shadow:0 8px 24px rgba(10,37,64,0.42);transform:translateY(-1px);}
+.btn-audit svg{transition:transform .2s;}
+.btn-audit:hover svg{transform:translateX(3px);}
 .hero-footnote{font-size:13px;color:var(--text-muted);margin-top:16px;}
 .hero-visual{position:relative;}
-.hv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:28px;box-shadow:var(--shadow-lg);}
-.hv-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
-.hv-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:100px;font-size:12px;font-weight:600;color:#15803d;}
-.hv-pulse{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:blink 2s infinite;}
-.hv-time{font-size:12px;color:var(--text-muted);}
-.hv-meeting{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;}
-.hv-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#635bff,#00b4ff);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;letter-spacing:.02em;}
-.hv-meta{flex:1;min-width:0;}
-.hv-name{font-size:14px;font-weight:600;color:var(--text-primary);}
-.hv-detail{font-size:12px;color:var(--text-muted);margin-top:2px;}
-.hv-cal{flex-shrink:0;}
-.hv-slot{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);padding:0 2px;margin-bottom:20px;}
-.hv-slot-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
-.hv-divider{height:1px;background:var(--border);margin-bottom:20px;}
-.hv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-.hv-stat{text-align:center;padding:14px 8px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);}
-.hv-stat-num{font-size:22px;font-weight:700;color:var(--text-primary);letter-spacing:-.03em;line-height:1;}
-.hv-stat-label{font-size:11px;color:var(--text-muted);margin-top:5px;line-height:1.3;}
-.hv-notify{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);margin-top:10px;}
-.hv-notify-icon{width:32px;height:32px;border-radius:var(--radius);background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.hv-notify-text{font-size:13px;font-weight:500;color:var(--text-primary);}
-.hv-notify-sub{font-size:12px;color:var(--text-muted);margin-top:2px;}
+.hv-card{background:linear-gradient(145deg,#0a2540 0%,#112d4e 100%);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius-xl);padding:28px;box-shadow:var(--shadow-lg);}
+.hv-feed-title{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;}
+.hv-feed{display:flex;flex-direction:column;gap:8px;}
+.hv-item{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius-lg);}
+.hv-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.hv-dot-green{background:#4ade80;}
+.hv-dot-blue{background:#60a5fa;}
+.hv-dot-purple{background:#a78bfa;}
+.hv-dot-amber{background:#fbbf24;}
+.hv-item-title{font-size:13px;font-weight:600;color:rgba(255,255,255,0.88);line-height:1.3;}
+.hv-item-sub{font-size:12px;color:rgba(255,255,255,0.4);margin-top:3px;line-height:1.4;}
 .logo-bar{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 40px;}
 .logo-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
 .logo-bar-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;}
@@ -256,46 +247,36 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
     </div>
     <div class="hero-visual">
       <div class="hv-card">
-        <div class="hv-header">
-          <div class="hv-badge"><span class="hv-pulse"></span>Meeting booked</div>
-          <span class="hv-time">Just now</span>
-        </div>
-        <div class="hv-meeting">
-          <div class="hv-avatar">AC</div>
-          <div class="hv-meta">
-            <div class="hv-name">Alex Chen</div>
-            <div class="hv-detail">VP Operations · Acme Corp</div>
+        <div class="hv-feed-title">Activity</div>
+        <div class="hv-feed">
+          <div class="hv-item">
+            <span class="hv-dot hv-dot-green"></span>
+            <div>
+              <div class="hv-item-title">Meeting booked</div>
+              <div class="hv-item-sub">Alex Chen · VP Operations · Acme Corp<br>Tomorrow · 2:00 PM – 2:30 PM</div>
+            </div>
           </div>
-          <div class="hv-cal">
-            <svg width="16" height="16" fill="none" stroke="#635bff" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div class="hv-item">
+            <span class="hv-dot hv-dot-blue"></span>
+            <div>
+              <div class="hv-item-title">Reply received</div>
+              <div class="hv-item-sub">Sarah Mitchell · Founder · Stackly<br>"Interested — can we chat next week?"</div>
+            </div>
           </div>
-        </div>
-        <div class="hv-slot">
-          <span class="hv-slot-dot"></span>Tomorrow · 2:00 PM – 2:30 PM
-        </div>
-        <div class="hv-divider"></div>
-        <div class="hv-stats">
-          <div class="hv-stat">
-            <div class="hv-stat-num">12</div>
-            <div class="hv-stat-label">Meetings booked</div>
+          <div class="hv-item">
+            <span class="hv-dot hv-dot-purple"></span>
+            <div>
+              <div class="hv-item-title">Call scheduled</div>
+              <div class="hv-item-sub">James O'Brien · CTO · Loopback.io<br>Friday · 10:00 AM – 10:30 AM</div>
+            </div>
           </div>
-          <div class="hv-stat">
-            <div class="hv-stat-num">34%</div>
-            <div class="hv-stat-label">Reply rate</div>
+          <div class="hv-item">
+            <span class="hv-dot hv-dot-amber"></span>
+            <div>
+              <div class="hv-item-title">Follow-up sent</div>
+              <div class="hv-item-sub">Tom Walsh · Head of Ops · Plenio<br>Sequence step 2 of 4</div>
+            </div>
           </div>
-          <div class="hv-stat">
-            <div class="hv-stat-num">8h</div>
-            <div class="hv-stat-label">Saved per week</div>
-          </div>
-        </div>
-      </div>
-      <div class="hv-notify">
-        <div class="hv-notify-icon">
-          <svg width="13" height="13" fill="none" stroke="#635bff" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
-        <div>
-          <div class="hv-notify-text">Sarah replied to your sequence</div>
-          <div class="hv-notify-sub">Interested — can we chat next week?</div>
         </div>
       </div>
     </div>
