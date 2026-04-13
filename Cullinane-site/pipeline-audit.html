@@ -31,6 +31,7 @@
   --shadow-lg:0 13px 40px rgba(0,0,0,0.09),0 4px 14px rgba(0,0,0,0.06);
 }
 body{font-family:'Geist','Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased;min-height:100vh;}
+img{max-width:100%;height:auto;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,249,252,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-inner{max-width:1140px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{height:36px;width:auto;}
@@ -103,7 +104,8 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
   .main{grid-template-columns:1fr;padding:40px 24px 60px;}
   .form-card{position:static;}
   .hero-strip{padding:88px 24px 40px;}
-  .nav-inner{padding:0 24px;}
+  .hero-strip h1{font-size:clamp(28px,8vw,44px);}
+  .nav-inner{padding:0 20px;}
   .results-body{padding:24px;}
   .results-footer{flex-direction:column;align-items:flex-start;}
 }
@@ -114,10 +116,6 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 <nav>
   <div class="nav-inner">
     <img src="image_1.png" alt="Cullinane Labs" class="nav-logo">
-    <a href="index.html" class="nav-back">
-      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      Back to home
-    </a>
     <a href="contact.html" class="nav-cta">Book a call</a>
   </div>
 </nav>
