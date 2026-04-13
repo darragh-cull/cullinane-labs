@@ -63,7 +63,7 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .hero-wrap{position:relative;overflow:hidden;background:linear-gradient(180deg,#f6f9fc 0%,#fff 100%);padding:140px 40px 100px;}
 .hero-wrap::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-20%);width:900px;height:700px;background:radial-gradient(ellipse at center,rgba(99,91,255,0.08) 0%,rgba(99,91,255,0.03) 45%,transparent 70%);pointer-events:none;}
 .hero-wrap::after{content:'';position:absolute;top:0;right:-100px;width:600px;height:500px;background:radial-gradient(ellipse at center,rgba(0,180,255,0.05) 0%,transparent 65%);pointer-events:none;}
-.hero{max-width:1140px;margin:0 auto;position:relative;z-index:1;}
+.hero{max-width:1140px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;background:var(--white);border:1px solid var(--border);border-radius:100px;font-size:13px;font-weight:500;color:var(--text-secondary);margin-bottom:32px;box-shadow:var(--shadow-sm);}
 .eyebrow-pill{background:var(--blue);color:#fff;border-radius:100px;padding:2px 10px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
 .hero h1{font-size:clamp(44px,5.5vw,72px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:var(--text-primary);max-width:780px;margin-bottom:24px;}
@@ -79,6 +79,29 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .btn-audit{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--white);color:var(--text-primary);border:1.5px solid var(--border-strong);border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:var(--shadow-sm);}
 .btn-audit:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px);box-shadow:var(--shadow);}
 .hero-footnote{font-size:13px;color:var(--text-muted);margin-top:16px;}
+.hero-visual{position:relative;}
+.hv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:28px;box-shadow:var(--shadow-lg);}
+.hv-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.hv-badge{display:inline-flex;align-items:center;gap:7px;padding:5px 12px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:100px;font-size:12px;font-weight:600;color:#15803d;}
+.hv-pulse{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:blink 2s infinite;}
+.hv-time{font-size:12px;color:var(--text-muted);}
+.hv-meeting{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;}
+.hv-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#635bff,#00b4ff);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;letter-spacing:.02em;}
+.hv-meta{flex:1;min-width:0;}
+.hv-name{font-size:14px;font-weight:600;color:var(--text-primary);}
+.hv-detail{font-size:12px;color:var(--text-muted);margin-top:2px;}
+.hv-cal{flex-shrink:0;}
+.hv-slot{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);padding:0 2px;margin-bottom:20px;}
+.hv-slot-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+.hv-divider{height:1px;background:var(--border);margin-bottom:20px;}
+.hv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.hv-stat{text-align:center;padding:14px 8px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);}
+.hv-stat-num{font-size:22px;font-weight:700;color:var(--text-primary);letter-spacing:-.03em;line-height:1;}
+.hv-stat-label{font-size:11px;color:var(--text-muted);margin-top:5px;line-height:1.3;}
+.hv-notify{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);margin-top:10px;}
+.hv-notify-icon{width:32px;height:32px;border-radius:var(--radius);background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.hv-notify-text{font-size:13px;font-weight:500;color:var(--text-primary);}
+.hv-notify-sub{font-size:12px;color:var(--text-muted);margin-top:2px;}
 .logo-bar{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 40px;}
 .logo-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:48px;flex-wrap:wrap;}
 .logo-bar-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;}
@@ -176,6 +199,8 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   .nav-links.open li{border-bottom:1px solid var(--border);}
   .nav-links.open li:last-child{border-bottom:none;}
   .nav-links.open a{padding:13px 0;display:block;font-size:15px;}
+  .hero{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
   .hero-wrap{padding:100px 24px 64px;}
   .hero h1{font-size:clamp(28px,8vw,44px);}
   .section{padding:64px 24px;}
@@ -210,23 +235,70 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
 
 <div class="hero-wrap">
   <div class="hero">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-pill">New</span>
-      Now taking pilot applications.
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-pill">New</span>
+        Now taking pilot applications.
+      </div>
+      <h1>Qualified meetings booked.<br><em>You just show up and close.</em></h1>
+      <p class="hero-sub">Cullinane Labs handles your prospecting, outreach, and follow-ups — so your calendar fills with the right conversations.</p>
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn-primary">
+          Book a free call
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="pipeline-audit.html" class="btn-audit">
+          Free pipeline audit
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <p class="hero-footnote">No commitment. 30 minutes. We'll tell you honestly if it's a fit.</p>
     </div>
-    <h1>Qualified meetings booked.<br><em>You just show up and close.</em></h1>
-    <p class="hero-sub">Cullinane Labs handles your prospecting, outreach, and follow-ups — so your calendar fills with the right conversations.</p>
-    <div class="hero-ctas">
-      <a href="contact.html" class="btn-primary">
-        Book a free call
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="pipeline-audit.html" class="btn-audit">
-        Free pipeline audit
-        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+    <div class="hero-visual">
+      <div class="hv-card">
+        <div class="hv-header">
+          <div class="hv-badge"><span class="hv-pulse"></span>Meeting booked</div>
+          <span class="hv-time">Just now</span>
+        </div>
+        <div class="hv-meeting">
+          <div class="hv-avatar">AC</div>
+          <div class="hv-meta">
+            <div class="hv-name">Alex Chen</div>
+            <div class="hv-detail">VP Operations · Acme Corp</div>
+          </div>
+          <div class="hv-cal">
+            <svg width="16" height="16" fill="none" stroke="#635bff" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+        </div>
+        <div class="hv-slot">
+          <span class="hv-slot-dot"></span>Tomorrow · 2:00 PM – 2:30 PM
+        </div>
+        <div class="hv-divider"></div>
+        <div class="hv-stats">
+          <div class="hv-stat">
+            <div class="hv-stat-num">12</div>
+            <div class="hv-stat-label">Meetings booked</div>
+          </div>
+          <div class="hv-stat">
+            <div class="hv-stat-num">34%</div>
+            <div class="hv-stat-label">Reply rate</div>
+          </div>
+          <div class="hv-stat">
+            <div class="hv-stat-num">8h</div>
+            <div class="hv-stat-label">Saved per week</div>
+          </div>
+        </div>
+      </div>
+      <div class="hv-notify">
+        <div class="hv-notify-icon">
+          <svg width="13" height="13" fill="none" stroke="#635bff" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="hv-notify-text">Sarah replied to your sequence</div>
+          <div class="hv-notify-sub">Interested — can we chat next week?</div>
+        </div>
+      </div>
     </div>
-    <p class="hero-footnote">No commitment. 30 minutes. We'll tell you honestly if it's a fit.</p>
   </div>
 </div>
 
