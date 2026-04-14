@@ -173,6 +173,31 @@ nav.scrolled{box-shadow:var(--shadow-sm);}
 .feature-icon{width:40px;height:40px;background:var(--blue-light);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
 .feature-card h3{font-size:15px;font-weight:600;color:var(--text-primary);margin-bottom:8px;letter-spacing:-.01em;}
 .feature-card p{font-size:14px;line-height:1.65;color:var(--text-secondary);}
+.roi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr 1fr;}
+.roi-inputs{padding:40px;}
+.roi-results{background:linear-gradient(155deg,#0a2540 0%,#112d4e 60%,#1a3a5c 100%);padding:40px;display:flex;flex-direction:column;justify-content:center;}
+.roi-section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:28px;}
+.roi-results-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:28px;}
+.slider-group{margin-bottom:26px;}
+.slider-group:last-child{margin-bottom:0;}
+.slider-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+.slider-name{font-size:14px;font-weight:500;color:var(--text-secondary);}
+.slider-val{font-size:15px;font-weight:700;color:var(--text-primary);}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:2px;outline:none;cursor:pointer;background:linear-gradient(to right,var(--blue) 0%,var(--blue) 35%,var(--border) 35%,var(--border) 100%);}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--white);border:2px solid var(--blue);box-shadow:0 2px 8px rgba(99,91,255,0.35);cursor:pointer;transition:transform .15s,box-shadow .15s;}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);box-shadow:0 3px 12px rgba(99,91,255,0.5);}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--white);border:2px solid var(--blue);box-shadow:0 2px 8px rgba(99,91,255,0.35);cursor:pointer;}
+.slider-ends{display:flex;justify-content:space-between;margin-top:6px;}
+.slider-ends span{font-size:11px;color:var(--text-muted);}
+.result-row{padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+.result-row:last-child{border-bottom:none;padding-bottom:0;}
+.result-row:first-of-type{padding-top:0;}
+.result-row-label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:5px;}
+.result-row-value{font-size:28px;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1;}
+.result-row.hero .result-row-value{font-size:42px;}
+.result-row.hero .result-row-label{color:rgba(99,91,255,0.7);}
+.result-row-hint{font-size:11px;color:rgba(255,255,255,0.25);margin-top:5px;line-height:1.5;}
+.roi-disclaimer{font-size:13px;color:var(--text-muted);margin-top:16px;line-height:1.65;}
 .footer-wordmark{font-size:15px;font-weight:700;color:var(--text-primary);letter-spacing:-.01em;text-decoration:none;}
 footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
 .footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
@@ -227,6 +252,10 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   .pilot-right{padding:28px;}
   .footer-inner{flex-direction:column;align-items:flex-start;gap:20px;}
   .footer-links{flex-wrap:wrap;gap:12px 20px;}
+  .roi-card{grid-template-columns:1fr;}
+  .roi-results{padding:28px;}
+  .roi-inputs{padding:28px;}
+  .result-row.hero .result-row-value{font-size:36px;}
 }
 </style>
 </head>
@@ -385,6 +414,60 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   </div>
 </div>
 
+<div class="section" id="roi">
+  <div class="inner">
+    <div class="section-label r">ROI Calculator</div>
+    <h2 class="section-title r">What could outbound be worth to you?</h2>
+    <p class="section-sub r">Adjust the sliders to see what a consistent pipeline motion could add to your revenue.</p>
+    <div class="roi-card r">
+      <div class="roi-inputs">
+        <div class="roi-section-label">Your inputs</div>
+        <div class="slider-group">
+          <div class="slider-row">
+            <span class="slider-name">Meetings booked per month</span>
+            <span class="slider-val" id="rv-meetings">8</span>
+          </div>
+          <input type="range" id="rs-meetings" min="1" max="20" value="8" step="1">
+          <div class="slider-ends"><span>1</span><span>20</span></div>
+        </div>
+        <div class="slider-group">
+          <div class="slider-row">
+            <span class="slider-name">Close rate</span>
+            <span class="slider-val" id="rv-close">25%</span>
+          </div>
+          <input type="range" id="rs-close" min="5" max="50" value="25" step="1">
+          <div class="slider-ends"><span>5%</span><span>50%</span></div>
+        </div>
+        <div class="slider-group">
+          <div class="slider-row">
+            <span class="slider-name">Average contract value</span>
+            <span class="slider-val" id="rv-acv">€8,000</span>
+          </div>
+          <input type="range" id="rs-acv" min="1000" max="50000" value="8000" step="500">
+          <div class="slider-ends"><span>€1k</span><span>€50k</span></div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <div class="roi-results-label">Projected results</div>
+        <div class="result-row">
+          <div class="result-row-label">Deals closed / month</div>
+          <div class="result-row-value" id="rr-deals">2</div>
+        </div>
+        <div class="result-row">
+          <div class="result-row-label">New revenue / month</div>
+          <div class="result-row-value" id="rr-monthly">€16k</div>
+        </div>
+        <div class="result-row hero">
+          <div class="result-row-label">New revenue / year</div>
+          <div class="result-row-value" id="rr-annual">€192k</div>
+          <div class="result-row-hint" id="rr-hint">8 meetings × 25% close × €8,000 ACV</div>
+        </div>
+      </div>
+    </div>
+    <p class="roi-disclaimer r">A rough estimate based on your inputs — actual results depend on your product, ICP, and market.</p>
+  </div>
+</div>
+
 <div class="section section-alt" id="who">
   <div class="inner">
     <div class="section-label r">Who it's for</div>
@@ -478,6 +561,38 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);}
   </div>
 </footer>
 <script>
+// ROI Calculator
+(function(){
+  const sM=document.getElementById('rs-meetings');
+  const sC=document.getElementById('rs-close');
+  const sA=document.getElementById('rs-acv');
+  function rfill(el){
+    const pct=(el.value-el.min)/(el.max-el.min)*100;
+    el.style.background=`linear-gradient(to right,#635bff 0%,#635bff ${pct}%,#e6ebf1 ${pct}%,#e6ebf1 100%)`;
+  }
+  function rfmt(n){
+    if(n>=1000000)return '€'+(n/1000000).toFixed(1).replace(/\.0$/,'')+'M';
+    if(n>=1000)return '€'+(n/1000).toFixed(0)+'k';
+    return '€'+n.toLocaleString();
+  }
+  function rupdate(){
+    const m=+sM.value,c=+sC.value/100,a=+sA.value;
+    const deals=m*c,monthly=deals*a,annual=monthly*12;
+    document.getElementById('rv-meetings').textContent=m;
+    document.getElementById('rv-close').textContent=sC.value+'%';
+    document.getElementById('rv-acv').textContent='€'+Number(a).toLocaleString();
+    document.getElementById('rr-deals').textContent=deals%1===0?deals.toFixed(0):deals.toFixed(1);
+    document.getElementById('rr-monthly').textContent=rfmt(monthly);
+    document.getElementById('rr-annual').textContent=rfmt(annual);
+    document.getElementById('rr-hint').textContent=`${m} meetings × ${sC.value}% close × €${Number(a).toLocaleString()} ACV`;
+    rfill(sM);rfill(sC);rfill(sA);
+  }
+  sM.addEventListener('input',rupdate);
+  sC.addEventListener('input',rupdate);
+  sA.addEventListener('input',rupdate);
+  rupdate();
+})();
+
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')})},{threshold:0.06});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 window.addEventListener('scroll',()=>{

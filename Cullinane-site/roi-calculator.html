@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outbound ROI Calculator | Cullinane Labs</title>
+<meta name="description" content="Calculate the potential revenue impact of a consistent outbound sales motion for your B2B SaaS business.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cullinane Labs">
+<meta property="og:title" content="Outbound ROI Calculator | Cullinane Labs">
+<meta property="og:description" content="Calculate the potential revenue impact of a consistent outbound sales motion for your B2B SaaS business.">
+<meta property="og:url" content="https://cullinanelabs.com/roi-calculator.html">
+<meta property="og:image" content="https://cullinanelabs.com/favicon2.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="icon" type="image/png" href="favicon2.png">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","wbnp97hrmm");</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --text-primary:#0a2540;
+  --text-secondary:#425466;
+  --text-muted:#8898aa;
+  --bg:#f6f9fc;
+  --white:#ffffff;
+  --border:#e6ebf1;
+  --border-strong:#cdd5e0;
+  --blue:#635bff;
+  --blue-hover:#5851db;
+  --blue-light:#f0efff;
+  --radius:8px;
+  --radius-lg:12px;
+  --radius-xl:16px;
+  --shadow-sm:0 2px 5px rgba(0,0,0,0.05),0 1px 2px rgba(0,0,0,0.07);
+  --shadow-lg:0 13px 40px rgba(0,0,0,0.09),0 4px 14px rgba(0,0,0,0.06);
+}
+body{font-family:'Geist','Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased;min-height:100vh;}
+img{max-width:100%;height:auto;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,249,252,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{height:36px;width:auto;}
+.nav-cta{padding:8px 20px;background:var(--blue);color:#fff;border-radius:var(--radius);font-size:14px;font-weight:600;text-decoration:none;transition:background .15s;box-shadow:0 4px 12px rgba(99,91,255,0.3);}
+.nav-cta:hover{background:var(--blue-hover);}
+
+.page{padding:104px 40px 80px;max-width:920px;margin:0 auto;}
+.page-label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;}
+.page-h{font-size:clamp(32px,4vw,48px);font-weight:700;letter-spacing:-.025em;line-height:1.1;color:var(--text-primary);margin-bottom:12px;}
+.page-sub{font-size:16px;line-height:1.7;color:var(--text-secondary);max-width:540px;margin-bottom:48px;}
+
+.calc-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr 1fr;}
+
+/* Inputs */
+.calc-inputs{padding:44px 40px;}
+.calc-section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:32px;}
+
+.slider-group{margin-bottom:30px;}
+.slider-group:last-child{margin-bottom:0;}
+.slider-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+.slider-name{font-size:14px;font-weight:500;color:var(--text-secondary);}
+.slider-val{font-size:16px;font-weight:700;color:var(--text-primary);}
+
+input[type=range]{
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:4px;border-radius:2px;
+  outline:none;cursor:pointer;
+  background:linear-gradient(to right,var(--blue) 0%,var(--blue) 35%,var(--border) 35%,var(--border) 100%);
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:20px;height:20px;border-radius:50%;
+  background:var(--white);border:2px solid var(--blue);
+  box-shadow:0 2px 8px rgba(99,91,255,0.35);
+  cursor:pointer;transition:transform .15s,box-shadow .15s;
+}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);box-shadow:0 3px 12px rgba(99,91,255,0.5);}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--white);border:2px solid var(--blue);box-shadow:0 2px 8px rgba(99,91,255,0.35);cursor:pointer;}
+.slider-ends{display:flex;justify-content:space-between;margin-top:7px;}
+.slider-ends span{font-size:11px;color:var(--text-muted);}
+
+/* Results */
+.calc-results{background:linear-gradient(155deg,#0a2540 0%,#112d4e 60%,#1a3a5c 100%);padding:44px 40px;display:flex;flex-direction:column;justify-content:center;gap:0;}
+.calc-results-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:32px;}
+
+.result-row{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+.result-row:last-child{border-bottom:none;padding-bottom:0;}
+.result-row:first-of-type{padding-top:0;}
+.result-row-label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:6px;}
+.result-row-value{font-size:30px;font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1;}
+.result-row.hero .result-row-label{color:rgba(99,91,255,0.7);}
+.result-row.hero .result-row-value{font-size:48px;color:#fff;}
+.result-row-hint{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;line-height:1.5;}
+
+.calc-disclaimer{font-size:13px;line-height:1.65;color:var(--text-muted);margin-top:20px;}
+
+.cta-box{margin-top:56px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;box-shadow:var(--shadow-sm);}
+.cta-box-text h2{font-size:20px;font-weight:700;color:var(--text-primary);letter-spacing:-.01em;margin-bottom:6px;}
+.cta-box-text p{font-size:14px;color:var(--text-secondary);line-height:1.65;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--blue);color:#fff;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 4px 14px rgba(99,91,255,0.35);white-space:nowrap;}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-1px);}
+.btn-primary svg{transition:transform .2s;}
+.btn-primary:hover svg{transform:translateX(3px);}
+
+footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);margin-top:80px;}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{height:32px;width:auto;}
+.footer-copy{font-size:13px;color:var(--text-muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color .15s;}
+.footer-links a:hover{color:var(--text-primary);}
+
+@media(max-width:760px){
+  .page{padding:88px 24px 60px;}
+  .nav-inner{padding:0 20px;}
+  .calc-card{grid-template-columns:1fr;}
+  .calc-results{padding:32px 28px;}
+  .calc-inputs{padding:32px 28px;}
+  .result-row.hero .result-row-value{font-size:40px;}
+  .cta-box{flex-direction:column;align-items:flex-start;padding:28px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:20px;}
+  .footer-links{flex-wrap:wrap;gap:12px 20px;}
+  footer{padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/"><img src="image_1.png" alt="Cullinane Labs" class="nav-logo"></a>
+    <a href="contact.html" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="page-label">Tools</div>
+  <h1 class="page-h">Outbound ROI Calculator</h1>
+  <p class="page-sub">Adjust the sliders to estimate what a consistent outbound motion could be worth to your business.</p>
+
+  <div class="calc-card">
+    <div class="calc-inputs">
+      <div class="calc-section-label">Your inputs</div>
+
+      <div class="slider-group">
+        <div class="slider-row">
+          <span class="slider-name">Meetings booked per month</span>
+          <span class="slider-val" id="v-meetings">8</span>
+        </div>
+        <input type="range" id="s-meetings" min="1" max="20" value="8" step="1">
+        <div class="slider-ends"><span>1</span><span>20</span></div>
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-row">
+          <span class="slider-name">Close rate</span>
+          <span class="slider-val" id="v-close">25%</span>
+        </div>
+        <input type="range" id="s-close" min="5" max="50" value="25" step="1">
+        <div class="slider-ends"><span>5%</span><span>50%</span></div>
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-row">
+          <span class="slider-name">Average contract value</span>
+          <span class="slider-val" id="v-acv">€8,000</span>
+        </div>
+        <input type="range" id="s-acv" min="1000" max="50000" value="8000" step="500">
+        <div class="slider-ends"><span>€1k</span><span>€50k</span></div>
+      </div>
+    </div>
+
+    <div class="calc-results">
+      <div class="calc-results-label">Projected results</div>
+
+      <div class="result-row">
+        <div class="result-row-label">Deals closed / month</div>
+        <div class="result-row-value" id="r-deals">2.0</div>
+      </div>
+
+      <div class="result-row">
+        <div class="result-row-label">New revenue / month</div>
+        <div class="result-row-value" id="r-monthly">€16,000</div>
+      </div>
+
+      <div class="result-row hero">
+        <div class="result-row-label">New revenue / year</div>
+        <div class="result-row-value" id="r-annual">€192,000</div>
+        <div class="result-row-hint" id="r-hint">8 meetings × 25% close × €8,000 ACV</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="calc-disclaimer">A rough estimate based on your inputs — actual results depend on your product, ICP, and market. Assumes one-time ACV; recurring revenue compounds further.</p>
+
+  <div class="cta-box">
+    <div class="cta-box-text">
+      <h2>Ready to start filling your calendar?</h2>
+      <p>Book a free 30-minute call. We'll tell you honestly if outbound makes sense for where you are right now.</p>
+    </div>
+    <a href="contact.html" class="btn-primary">
+      Book a free call
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <img src="image_1.png" alt="Cullinane Labs" class="footer-logo">
+    <span class="footer-copy">© 2026 Cullinane Labs</span>
+    <div class="footer-links">
+      <a href="contact.html">Book a call</a>
+      <a href="mailto:darragh@cullinanelabs.com">darragh@cullinanelabs.com</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const sM = document.getElementById('s-meetings');
+const sC = document.getElementById('s-close');
+const sA = document.getElementById('s-acv');
+
+function fill(el) {
+  const pct = (el.value - el.min) / (el.max - el.min) * 100;
+  el.style.background = `linear-gradient(to right,#635bff 0%,#635bff ${pct}%,#e6ebf1 ${pct}%,#e6ebf1 100%)`;
+}
+
+function fmt(n) {
+  if (n >= 1000000) return '€' + (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  if (n >= 1000) return '€' + (n / 1000).toFixed(0) + 'k';
+  return '€' + n.toLocaleString();
+}
+
+function update() {
+  const m = +sM.value;
+  const c = +sC.value / 100;
+  const a = +sA.value;
+
+  const deals = m * c;
+  const monthly = deals * a;
+  const annual = monthly * 12;
+
+  document.getElementById('v-meetings').textContent = m;
+  document.getElementById('v-close').textContent = sC.value + '%';
+  document.getElementById('v-acv').textContent = '€' + Number(a).toLocaleString();
+
+  document.getElementById('r-deals').textContent = deals % 1 === 0 ? deals.toFixed(0) : deals.toFixed(1);
+  document.getElementById('r-monthly').textContent = fmt(monthly);
+  document.getElementById('r-annual').textContent = fmt(annual);
+  document.getElementById('r-hint').textContent = `${m} meetings × ${sC.value}% close × €${Number(a).toLocaleString()} ACV`;
+
+  fill(sM); fill(sC); fill(sA);
+}
+
+sM.addEventListener('input', update);
+sC.addEventListener('input', update);
+sA.addEventListener('input', update);
+update();
+</script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
