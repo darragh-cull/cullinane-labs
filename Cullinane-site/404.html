@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Cullinane Labs</title>
+<link rel="icon" type="image/png" href="favicon2.png">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --text-primary:#0a2540;
+  --text-secondary:#425466;
+  --text-muted:#8898aa;
+  --bg:#f6f9fc;
+  --white:#ffffff;
+  --border:#e6ebf1;
+  --blue:#635bff;
+  --blue-hover:#5851db;
+  --radius:8px;
+  --radius-xl:16px;
+  --shadow-lg:0 13px 40px rgba(0,0,0,0.09),0 4px 14px rgba(0,0,0,0.06);
+}
+body{font-family:'Geist','Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+img{max-width:100%;height:auto;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(246,249,252,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1140px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{height:36px;width:auto;}
+.nav-cta{padding:8px 20px;background:var(--blue);color:#fff;border-radius:var(--radius);font-size:14px;font-weight:600;text-decoration:none;transition:background .15s;box-shadow:0 4px 12px rgba(99,91,255,0.3);}
+.nav-cta:hover{background:var(--blue-hover);}
+
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:100px 40px 80px;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-xl);padding:64px 56px;max-width:520px;width:100%;text-align:center;box-shadow:var(--shadow-lg);}
+.error-code{font-size:72px;font-weight:700;letter-spacing:-.04em;color:var(--blue);line-height:1;margin-bottom:16px;opacity:0.15;}
+.error-title{font-size:26px;font-weight:700;letter-spacing:-.02em;color:var(--text-primary);margin-bottom:12px;}
+.error-sub{font-size:15px;line-height:1.7;color:var(--text-secondary);margin-bottom:36px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--blue);color:#fff;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;box-shadow:0 4px 14px rgba(99,91,255,0.35);}
+.btn-primary:hover{background:var(--blue-hover);transform:translateY(-1px);}
+.btn-primary svg{transition:transform .2s;}
+.btn-primary:hover svg{transform:translateX(3px);}
+
+footer{border-top:1px solid var(--border);padding:32px 40px;background:var(--bg);}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{height:32px;width:auto;}
+.footer-copy{font-size:13px;color:var(--text-muted);}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color .15s;}
+.footer-links a:hover{color:var(--text-primary);}
+
+@media(max-width:600px){
+  .nav-inner{padding:0 20px;}
+  main{padding:88px 20px 60px;}
+  .card{padding:40px 28px;}
+  .error-code{font-size:56px;}
+  footer{padding:28px 20px;}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:16px;}
+  .footer-links{flex-wrap:wrap;gap:10px 16px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/"><img src="image_1.png" alt="Cullinane Labs" class="nav-logo"></a>
+    <a href="contact.html" class="nav-cta">Book a call</a>
+  </div>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page not found</h1>
+    <p class="error-sub">The page you're looking for doesn't exist or has moved. Head back to the homepage and we'll get you sorted.</p>
+    <a href="/" class="btn-primary">
+      Back to home
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <a href="/"><img src="image_1.png" alt="Cullinane Labs" class="footer-logo"></a>
+    <span class="footer-copy">© 2026 Cullinane Labs</span>
+    <div class="footer-links">
+      <a href="contact.html">Book a call</a>
+      <a href="mailto:darragh@cullinanelabs.com">darragh@cullinanelabs.com</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
