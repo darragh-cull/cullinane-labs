@@ -75,21 +75,40 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);marg
 .footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color .15s;}
 .footer-links a:hover{color:var(--text-primary);}
 
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color .15s;}.nav-links a:hover{color:var(--text-primary);}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-primary);border-radius:2px;transition:transform .22s ease,opacity .22s ease;}
+.nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 @media(max-width:760px){
   .page{padding:88px 24px 60px;}
   .nav-inner{padding:0 20px;}
   .footer-inner{flex-direction:column;align-items:flex-start;gap:20px;}
   .footer-links{flex-wrap:wrap;gap:12px 20px;}
   footer{padding:32px 24px;}
+  .nav-hamburger{display:flex;}.nav-links{display:none;}
+  .nav-links.open{display:flex;flex-direction:column;gap:0;position:fixed;top:64px;left:0;right:0;background:rgba(255,255,255,0.97);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);padding:8px 20px 20px;box-shadow:0 4px 14px rgba(0,0,0,0.08);z-index:99;}
+  .nav-links.open li{border-bottom:1px solid var(--border);}.nav-links.open li:last-child{border-bottom:none;}.nav-links.open a{padding:13px 0;display:block;font-size:15px;}
 }
 </style>
 </head>
 <body>
 
-<nav>
+<nav id="nav">
   <div class="nav-inner">
     <a href="/"><img src="image_1.png" alt="Cullinane Labs" class="nav-logo"></a>
+    <ul class="nav-links">
+      <li><a href="/#process">How it works</a></li>
+      <li><a href="/#who">Who it's for</a></li>
+      <li><a href="/#pilot">Pilot offer</a></li>
+      <li><a href="roi-calculator.html">ROI calculator</a></li>
+      <li><a href="pipeline-audit.html" style="color:var(--blue);font-weight:700;">Free audit ✦</a></li>
+    </ul>
     <a href="contact.html" class="nav-cta">Book a call</a>
+    <button class="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -187,6 +206,11 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg);marg
 </footer>
 
 <script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+const hamburger=document.querySelector('.nav-hamburger');
+const navLinks=document.querySelector('.nav-links');
+hamburger.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');hamburger.setAttribute('aria-expanded',open);});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}));
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
